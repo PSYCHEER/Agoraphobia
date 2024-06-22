@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 	[TabGroup("Movement")]
 	public float gravity = 9.81f;
 	[TabGroup("Movement")]
+	public float walkSpeed;
+	[TabGroup("Movement")]
 	public float runSpeed; //Lately will be added walkSpeed for slow walking or stealth and sprintSpeed
 	
 	[TabGroup("Camera")]
@@ -36,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
 	
 	private Rigidbody rb;
 	private PlayerControl playerControl;
+	[ShowInInspector]
+	float moveSpeed = 3;
 	
 	Vector2 moveVector;
 	Vector2 camVector;
@@ -66,6 +70,8 @@ public class PlayerMovement : MonoBehaviour
 		playerControl.Keyboard.Jump.started += Jump;
 		playerControl.Keyboard.Movement.performed += Movement;
 		playerControl.Keyboard.Look.performed += MouseLook;
+		playerControl.Keyboard.Sprint.started += StartSprint;
+		playerControl.Keyboard.Sprint.canceled += StopSprint;
 	}
 	
 	void OnDisable()
@@ -79,8 +85,9 @@ public class PlayerMovement : MonoBehaviour
 		if(isGrounded)
 		{
 			moveVector = playerControl.Keyboard.Movement.ReadValue<Vector2>();
-			move = new Vector3(moveVector.x * runSpeed, 0, moveVector.y * runSpeed);
+			move = new Vector3(moveVector.x * moveSpeed, 0, moveVector.y * moveSpeed);
 			move.y = playerControl.Keyboard.Jump.ReadValue<float>() * jumpHeight;
+			//Debug.Log("X: " + moveVector.x + "Y: " + moveVector.y);
 		}
 		else
 			move.y -= gravity * Time.deltaTime;
@@ -90,6 +97,15 @@ public class PlayerMovement : MonoBehaviour
 	protected void LateUpdate()
 	{
 		IsGrounded();
+	}
+	
+	void StartSprint(InputAction.CallbackContext context)
+	{
+		moveSpeed = runSpeed;
+	}
+	void StopSprint(InputAction.CallbackContext context)
+	{	
+		moveSpeed = walkSpeed;
 	}
 	
 	void Jump(InputAction.CallbackContext context)
