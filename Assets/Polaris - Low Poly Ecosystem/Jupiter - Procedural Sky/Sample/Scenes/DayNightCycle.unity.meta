@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dd938edb90000a947b131166dfda87f2
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 159992
+  packageName: Procedural Sky - Builtin & LWRP & URP - Jupiter
+  packageVersion: 1.2.13
+  assetPath: Assets/Polaris - Low Poly Ecosystem/Jupiter - Procedural Sky/Sample/Scenes/DayNightCycle.unity
+  uploadId: 608727

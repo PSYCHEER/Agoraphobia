@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f441ff010e8953541b03c7b6cf64f6f9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 8900000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 159992
+  packageName: Procedural Sky - Builtin & LWRP & URP - Jupiter
+  packageVersion: 1.2.13
+  assetPath: Assets/Polaris - Low Poly Ecosystem/Jupiter - Procedural Sky/Sample/Cubemaps/StrokeOverlay.cubemap
+  uploadId: 608727

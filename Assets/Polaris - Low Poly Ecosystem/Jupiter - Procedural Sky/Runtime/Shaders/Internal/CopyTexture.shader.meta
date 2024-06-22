@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b3f0e74bdb60b6b478290fc44ebf68f6
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 159992
+  packageName: Procedural Sky - Builtin & LWRP & URP - Jupiter
+  packageVersion: 1.2.13
+  assetPath: Assets/Polaris - Low Poly Ecosystem/Jupiter - Procedural Sky/Runtime/Shaders/Internal/CopyTexture.shader
+  uploadId: 608727
